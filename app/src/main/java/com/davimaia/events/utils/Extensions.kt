@@ -1,5 +1,6 @@
 package com.davimaia.events.utils
 
+import android.view.View
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -12,3 +13,7 @@ fun Long.dateFormat(): String {
 }
 
 fun Float.moneyFormat() = NumberFormat.getCurrencyInstance(Locale("pt","BR")).format(this) ?: ""
+
+fun View.show() {
+    this.visibility = View.VISIBLE
+}
