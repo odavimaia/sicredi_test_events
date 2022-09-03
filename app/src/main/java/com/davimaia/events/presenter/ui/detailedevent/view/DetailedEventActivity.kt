@@ -7,6 +7,7 @@ import android.os.Bundle
 import com.davimaia.events.R
 import com.davimaia.events.databinding.ActivityDetailedEventBinding
 import com.davimaia.events.utils.dateFormat
+import com.davimaia.events.utils.loadImage
 import com.davimaia.events.utils.moneyFormat
 import com.davimaia.events.utils.show
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -40,6 +41,7 @@ class DetailedEventActivity : AppCompatActivity() {
         viewModel.eventDetail.observe(this){
             binding.clEventDetailContent.show()
             it?.let { event ->
+                binding.ivEventDetailImage.loadImage(event.image)
                 binding.tvEventDetailTitle.text = event.title
                 binding.tvEventDetailDescription.text = event.description
                 binding.tvEventDetailDate.text = event.date.dateFormat()

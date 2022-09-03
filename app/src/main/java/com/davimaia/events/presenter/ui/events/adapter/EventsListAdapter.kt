@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.davimaia.events.databinding.EventItemBinding
 import com.davimaia.events.domain.model.Event
 import com.davimaia.events.utils.dateFormat
+import com.davimaia.events.utils.loadImage
 import com.davimaia.events.utils.moneyFormat
 
 class EventsListAdapter(
@@ -32,6 +33,7 @@ class EventsListAdapter(
     ) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(event: Event) = with(binding) {
+            ivEventImage.loadImage(event.image)
             tvEventTitle.text = event.title
             tvEventDescription.text = event.description
             tvEventDate.text = event.date.dateFormat()
