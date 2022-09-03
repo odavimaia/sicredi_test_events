@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.davimaia.events.R
 import com.davimaia.events.databinding.ActivityEventsListBinding
+import com.davimaia.events.presenter.ui.detailedevent.view.DetailedEventActivity
 import com.davimaia.events.presenter.ui.events.adapter.EventsListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -27,6 +28,7 @@ class EventsListActivity : AppCompatActivity() {
             it?.let { events ->
                 binding.rvEventList.layoutManager = LinearLayoutManager(this@EventsListActivity)
                 binding.rvEventList.adapter = EventsListAdapter(events) {
+                    DetailedEventActivity.start(this@EventsListActivity, it.id)
                 }
             }
         }
@@ -34,6 +36,6 @@ class EventsListActivity : AppCompatActivity() {
     }
 
     private fun setupToolbar() {
-        binding.tbEventsActivities.title = getString(R.string.actEventsListTitle)
+        binding.tbEventListActivity.title = getString(R.string.actEventsListTitle)
     }
 }
