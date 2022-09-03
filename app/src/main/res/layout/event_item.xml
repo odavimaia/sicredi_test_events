@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivEventImage"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:adjustViewBounds="false"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_event_example" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEventTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="4"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivEventImage"
+            tools:text="Título do evento" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivEventDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginVertical="8dp"
+            android:src="@drawable/ic_calendar_black"
+            app:layout_constraintBottom_toTopOf="@+id/tvEventSubtitle"
+            app:layout_constraintStart_toStartOf="@+id/tvEventTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvEventTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEventDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivEventDate"
+            app:layout_constraintStart_toEndOf="@id/ivEventDate"
+            app:layout_constraintTop_toTopOf="@id/ivEventDate"
+            tools:text="x de xxxx de xxxx" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivEventPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_money_black"
+            app:layout_constraintBottom_toTopOf="@+id/tvEventSubtitle"
+            app:layout_constraintStart_toEndOf="@+id/tvEventDate"
+            app:layout_constraintTop_toBottomOf="@id/tvEventTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEventPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="32dp"
+            android:ellipsize="end"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivEventPrice"
+            app:layout_constraintEnd_toEndOf="@id/tvEventTitle"
+            app:layout_constraintStart_toEndOf="@id/ivEventPrice"
+            app:layout_constraintTop_toTopOf="@id/ivEventDate"
+            tools:text="R$ 99,99" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEventSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvEventTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventDate"
+            app:layout_constraintEnd_toEndOf="@id/tvEventTitle"
+            tools:text="Subtítulo do evento" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
