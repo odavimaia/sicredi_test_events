@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Events</string>
+
+    <!-- activities -->
+    <string name="actEventsListTitle">Eventos</string>
+    <string name="actDetailedEventTitle">Sobre o Evento</string>
+
 </resources>
