@@ -7,18 +7,107 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/tbEventDetailActivity"
-        style="@style/Widget.Material3.Toolbar"
+        style="@style/Widget.MaterialComponents.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="#dbffff"
+        android:background="@color/blue_400"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clDoCheckIn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbEventDetailActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDoCheckIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_400"
+            android:ellipsize="end"
+            android:paddingVertical="10dp"
+            android:text="@string/label_do_check_in"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/clDoCheckIn"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvCheckInName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/lbName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.26999998">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvEditCheckInName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textWebEmailAddress"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvCheckInEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/lbEmail"
+            app:layout_constraintEnd_toEndOf="@id/tvCheckInName"
+            app:layout_constraintStart_toStartOf="@id/tvCheckInName"
+            app:layout_constraintTop_toBottomOf="@id/tvCheckInName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvEditCheckInEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btConfirmCheckIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="64dp"
+            android:layout_marginVertical="64dp"
+            android:backgroundTint="@color/blue_400"
+            android:text="@string/msg_confirmar"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/tvCheckInEmail"
+            app:layout_constraintStart_toStartOf="@id/tvCheckInEmail"
+            app:layout_constraintTop_toBottomOf="@+id/tvCheckInEmail"
+            tools:ignore="TextContrastCheck"
+            tools:targetApi="lollipop" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/svEventDetail"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btEventCheckIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbEventDetailActivity">
@@ -98,9 +187,9 @@
                 android:maxLines="4"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/ivEventDetailPrice"
+                app:layout_constraintEnd_toEndOf="@id/tvEventDetailTitle"
                 app:layout_constraintStart_toEndOf="@id/ivEventDetailPrice"
                 app:layout_constraintTop_toTopOf="@id/ivEventDetailPrice"
-                app:layout_constraintEnd_toEndOf="@id/tvEventDetailTitle"
                 tools:text="R$ 99,99" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -112,13 +201,38 @@
                 android:ellipsize="end"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tvEventDetailTitle"
                 app:layout_constraintStart_toStartOf="@id/tvEventDetailTitle"
                 app:layout_constraintTop_toBottomOf="@+id/ivEventDetailDate"
-                app:layout_constraintEnd_toEndOf="@id/tvEventDetailTitle"
                 tools:text="Texto sobre o evento" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btEventCheckIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="24dp"
+        android:backgroundTint="@color/blue_400"
+        android:text="Fazer Check-in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btEventShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/blue_400"
+        android:text="Compartilhar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btEventCheckIn"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

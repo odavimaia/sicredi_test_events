@@ -2,21 +2,20 @@ package com.davimaia.events.presenter.ui.detailedevent.view
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.davimaia.events.R
 import com.davimaia.events.databinding.ActivityDetailedEventBinding
-import com.davimaia.events.utils.dateFormat
-import com.davimaia.events.utils.loadImage
-import com.davimaia.events.utils.moneyFormat
-import com.davimaia.events.utils.show
+import com.davimaia.events.utils.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class DetailedEventActivity : AppCompatActivity() {
+open class DetailedEventActivity : AppCompatActivity() {
 
-    private val binding by lazy{
+    private val binding by lazy {
         ActivityDetailedEventBinding.inflate(layoutInflater)
     }
+
     private val viewModel: DetailedEventViewModel by viewModel()
 
     companion object {
@@ -35,10 +34,50 @@ class DetailedEventActivity : AppCompatActivity() {
         setContentView(binding.root)
         setupToolbar()
         setupEventDetails()
+        doCheckIn()
     }
 
-    private fun setupEventDetails(){
-        viewModel.eventDetail.observe(this){
+    private fun doCheckIn() {
+        binding.btEventCheckIn.setOnClickListener {
+            hideEventDetails()
+            onClickButtonConfirmCheckIn()
+        }
+    }
+
+    private fun onClickButtonConfirmCheckIn() {
+        binding.btConfirmCheckIn.setOnClickListener {
+            val eventId = getEventId().toString()
+            val name = binding.tvEditCheckInName.text.toString()
+            val email = binding.tvEditCheckInEmail.text.toString()
+            postCheckIn(name, email, eventId)
+            showEventDetails()
+        }
+    }
+
+    private fun showEventDetails() {
+        binding.svEventDetail.show()
+        binding.clDoCheckIn.hide()
+        binding.btEventCheckIn.show()
+        binding.btEventShare.show()
+    }
+
+    private fun postCheckIn(name: String, email: String, eventId: String) {
+        if (name.isEmpty() && email.isEmpty()) {
+            Toast.makeText(this, "Tem algum campo vazio!", Toast.LENGTH_SHORT).show()
+        } else {
+            viewModel.postCheckIn(eventId, name, email)
+        }
+    }
+
+    private fun hideEventDetails() {
+        binding.svEventDetail.hide()
+        binding.clDoCheckIn.show()
+        binding.btEventCheckIn.hide()
+        binding.btEventShare.hide()
+    }
+
+    private fun setupEventDetails() {
+        viewModel.eventDetail.observe(this) {
             binding.clEventDetailContent.show()
             it?.let { event ->
                 binding.ivEventDetailImage.loadImage(event.image)
@@ -51,7 +90,7 @@ class DetailedEventActivity : AppCompatActivity() {
         viewModel.getDetailedEvent(getEventId().toString())
     }
 
-    private fun setupToolbar(){
+    private fun setupToolbar() {
         binding.tbEventDetailActivity.title = getString(R.string.actDetailedEventTitle)
         setSupportActionBar(binding.tbEventDetailActivity)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

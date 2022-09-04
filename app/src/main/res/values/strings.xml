@@ -4,5 +4,9 @@
     <!-- activities -->
     <string name="actEventsListTitle">Eventos</string>
     <string name="actDetailedEventTitle">Sobre o Evento</string>
+    <string name="lbName">Nome</string>
+    <string name="lbEmail">Email</string>
+    <string name="msg_confirmar">Confirmar</string>
+    <string name="label_do_check_in">Fazer Check-in</string>
 
 </resources>
