@@ -8,5 +8,6 @@
     <string name="lbEmail">Email</string>
     <string name="msg_confirmar">Confirmar</string>
     <string name="label_do_check_in">Fazer Check-in</string>
+    <string name="msg_como_chegar">Como chegar?</string>
 
 </resources>

@@ -24,4 +24,10 @@ class DetailedEventViewModel(private val repositoryInterface: EventInterface) : 
             repositoryInterface.doCheckIn(checkInPayload)
         }
     }
+
+    fun getShareText(): String {
+        var shareText = "${eventDetail.value?.title}\n\n"
+        shareText += eventDetail.value?.description
+        return shareText
+    }
 }
