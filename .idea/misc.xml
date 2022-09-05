@@ -3,11 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout-v21/checkin_dialog.xml" value="0.3625" />
+        <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout/activity_check_in.xml" value="0.3625" />
         <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout/activity_detailed_event.xml" value="0.3625" />
+        <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout/activity_event_check_in.xml" value="0.3484375" />
+        <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout/activity_event_check_in_dialog.xml" value="0.3484375" />
         <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout/activity_event_list.xml" value="0.358695652173913" />
         <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout/activity_events_list.xml" value="0.3625" />
+        <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout/checkin_dialog.xml" value="0.3614583333333333" />
         <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout/event_details.xml" value="0.3625" />
         <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout/event_item.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout/view_check_in.xml" value="0.3625" />
+        <entry key="..\:/Users/odavi/AndroidStudioProjects/Events/app/src/main/res/layout/view_event_check_in.xml" value="0.27853260869565216" />
       </map>
     </option>
   </component>
