@@ -8,10 +8,10 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/tbEventListActivity"
-        style="@style/Widget.Material3.Toolbar"
+        style="@style/Widget.MaterialComponents.Toolbar"
         android:layout_width="0dp"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="#dbffff"
+        android:background="@color/blue_400"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tbEventListActivity"
-        tools:listitem="@layout/event_item"
-        tools:itemCount="5"/>
+        tools:itemCount="5"
+        tools:listitem="@layout/event_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

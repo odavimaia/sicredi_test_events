@@ -19,18 +19,23 @@ fun Long.dateFormat(): String {
 }
 
 //Função para formatar o preço do evento para real
-fun Float.moneyFormat() = NumberFormat.getCurrencyInstance(Locale("pt","BR")).format(this) ?: ""
+fun Float.moneyFormat() = NumberFormat.getCurrencyInstance(Locale("pt", "BR")).format(this) ?: ""
 
 //Função para mudar o estado de uma view para 'visível'
 fun View.show() {
     this.visibility = View.VISIBLE
 }
 
+//Função para ocultar a view
+fun View.hide() {
+    this.visibility = View.GONE
+}
+
 //Função para mostrar as imagens recebidas da api
 fun ImageView.loadImage(
     imageUrl: String?,
     @DrawableRes placeholderRes: Int = R.drawable.img_event_example,
-    @DrawableRes imageErrorRes: Int = R.drawable.img_not_found
+    @DrawableRes imageErrorRes: Int = R.drawable.img_not_found,
 ) {
     val requestOptions = RequestOptions().apply {
         placeholder(placeholderRes)
