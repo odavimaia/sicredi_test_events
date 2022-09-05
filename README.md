@@ -13,7 +13,7 @@ além de ter uma opção adicional:
 * Fornecer a localização do evento para o usuário;
 
 #### O app foi construido para atender a api 19+ do android, além de ser baseado em <br>
-#### MVVM e Clean Archtecture. As bibliotecas utilizadas na construção do app foram:
+#### MVVM, Clean Archtecture e Material Design. As bibliotecas utilizadas na construção do app foram:
 
 Bibliotecas    |  Função
 ---------------|---------
