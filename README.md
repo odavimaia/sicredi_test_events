@@ -12,8 +12,8 @@ além de ter uma opção adicional:
 
 * Fornecer a localização do evento para o usuário;
 
-#### O app foi construido para atender a api 19+ do android, além de ser baseado em <br>
-#### MVVM, Clean Archtecture e Material Design. As bibliotecas utilizadas na construção do app foram:
+#### O app foi construido para atender a api 19+ do android, além de ser baseado em MVVM, Clean Archtecture e Material Design.<br>
+As bibliotecas utilizadas na construção do app foram:
 
 Bibliotecas    |  Função
 ---------------|---------
@@ -22,8 +22,8 @@ Koin           | Injeção de dependências
 Glide          | Tratamento das imagens <br> recebidas da api
 Google Maps SDK| Para tratar a geolocalização <br> recebida da api
 
-Para utilizar o app, basta clonar o repositório e executá-lo pela _branch master_. Algumas imagens podem não ser retornadas <br>
-e deve ser algo relacionado a biblioteca ou a api. Pretendo continuar mexendo nesse projeto para aprimorar ainda mais (de acordo com)<br>
+Para utilizar o app, basta clonar o repositório e executá-lo pela _branch master_. Algumas imagens podem não ser retornadas
+e deve ser algo relacionado a biblioteca ou a api. Pretendo continuar mexendo nesse projeto para aprimorar ainda mais (de acordo com)
 a evolução do meu conhecimento durante os estudos. (apesar da entrega já ter sido realizada).
 
 # As telas presentes no app são: 
