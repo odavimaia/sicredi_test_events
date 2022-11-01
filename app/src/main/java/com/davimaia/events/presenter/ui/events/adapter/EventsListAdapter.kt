@@ -38,7 +38,6 @@ class EventsListAdapter(
             tvEventDescription.text = event.description
             tvEventDate.text = event.date.dateFormat()
             tvEventPrice.text = event.price.moneyFormat()
-
             binding.root.setOnClickListener {
                 onItemClick.invoke(event)
             }
