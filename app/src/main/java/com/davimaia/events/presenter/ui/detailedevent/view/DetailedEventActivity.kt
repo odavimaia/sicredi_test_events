@@ -66,7 +66,6 @@ open class DetailedEventActivity : AppCompatActivity() {
         }
     }
 
-
     private fun onClickButtonConfirmCheckIn() {
         binding.btConfirmCheckIn.setOnClickListener {
             val eventId = getEventId().toString()
